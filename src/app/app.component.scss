@@ -1,0 +1,19 @@
+// .card {
+//  margin-bottom: 20px;
+//  background-color: #eee;
+// }
+
+
+.card {&.mat-card
+  {margin-bottom: 15px;
+  background-color: #eee;
+  width: 25vw;
+   }
+}
+
+.container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
