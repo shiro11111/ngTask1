@@ -1,5 +1,11 @@
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
 
-<div class="container">
-<mat-card class="card" *ngFor="let item of (list$ | async)">{{ item?.name }}</mat-card>
-</div>
+<app-people-list></app-people-list>
+
+
+
+----------------------------------------
+
+<app-person-details></app-person-details>
+
+

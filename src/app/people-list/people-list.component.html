@@ -1,0 +1,10 @@
+<div class="container" *ngIf="(list$ | async)?.length > 0; else loading">
+  <mat-card class="card"
+            *ngFor="let item of (list$ | async)"
+            (click)="onPersonClicked(item?.url)"
+  >{{ item?.name }}</mat-card>
+</div>
+
+<ng-template #loading>
+  <mat-spinner [diameter]="24" [strokeWidth]="3"></mat-spinner>
+</ng-template>

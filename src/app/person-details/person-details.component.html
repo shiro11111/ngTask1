@@ -1,0 +1,16 @@
+<mat-card *ngIf="(personDetails$ | async)?.name">
+  <mat-card-title>{{ (personDetails$ | async)?.name }}</mat-card-title>
+  <mat-card-content>
+    <div>Height: {{ (personDetails$ | async)?.height }}</div>
+    <div>Mass: {{ (personDetails$ | async)?.mass }}</div>
+    <div>Hair color: {{ (personDetails$ | async)?.hair_color }}</div>
+    <div>Skin color: {{ (personDetails$ | async)?.skin_color }}</div>
+    <div>Eye color: {{ (personDetails$ | async)?.eye_color }}</div>
+    <div>Year of birth: {{ (personDetails$ | async)?.birth_year }}</div>
+    <div>Year of birth: {{ (personDetails$ | async)?.birth_year }}</div>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #loading>
+  <mat-spinner [diameter]="24" [strokeWidth]="3"></mat-spinner>
+</ng-template>

@@ -3,8 +3,8 @@ import { Response } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
-import { People } from './people';
-import { PaginatedList } from './models/paginated-list.model';
+import { People } from '../people';
+import { PaginatedList } from '../models/paginated-list.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,11 @@ export class PeopleListService {
       map((res: PaginatedList<People[]>) => res && res.results)
     ) as Observable<People[]>;
   }
+  loadPersonDetails(url: string): Observable<People> {
+    return this.http.get(url);
+  }
+
+
   constructor(private http: HttpClient) { }
 }
 

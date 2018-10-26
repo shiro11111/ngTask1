@@ -1,30 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { PeopleListService } from './people-list.service';
-import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
-import { reducers } from './app.reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
-import { PeopleListEffects } from './people-list.effects';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {PeopleListService} from './people-list/people-list.service';
+import {HttpClientModule} from '@angular/common/http';
+import {StoreModule} from '@ngrx/store';
+import {reducers} from './app.reducers';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {EffectsModule} from '@ngrx/effects';
+import {PeopleListEffects} from './people-list/people-list.effects';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import { MatCardModule } from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatProgressSpinnerModule, MatSnackBarModule} from '@angular/material';
+import {MatCardModule} from '@angular/material';
+import { PeopleListComponent } from './people-list/people-list.component';
+import { PersonDetailsComponent } from './person-details/person-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PeopleListComponent,
+    PersonDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    [BrowserAnimationsModule],
-    [MatButtonModule, MatCheckboxModule],
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
     MatCardModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([
       PeopleListEffects
@@ -34,4 +42,5 @@ import { MatCardModule } from '@angular/material';
   providers: [PeopleListService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

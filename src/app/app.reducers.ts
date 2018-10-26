@@ -1,4 +1,4 @@
-import * as fromPeopleList from './people-list.reducers';
+import * as fromPeopleList from './people-list/people-list.reducers';
 import { ActionReducerMap } from '@ngrx/store';
 
 
